@@ -26,6 +26,7 @@
             if(theme!='audio_list' || (theme=='audio_list' && start_id!='null')){
                 audio_music.play(); //触发音乐自动播放
             }else{
+                console.log('pause');
                 audio_music.pause();
                 console.log('audio_list && no start');
             }

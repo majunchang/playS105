@@ -187,7 +187,6 @@
 
                 <div class='div_music_tips'></div>
                 <div class="div_btn" id="div_music" onclick="music_switch()"> <!-- 音乐按钮部分 -->
-                     
                     <audio id="audio_music" autoplay="autoplay" loop="loop">
                         <source type="audio/mpeg"/>  
                         <!-- 您的浏览器不支持播放音乐 -->
@@ -257,12 +256,12 @@
         var height_div_pw=$(".div_pure_words_height").height();
         function init_pure_words(){
             //允许内容为空时直接展示，不设置为随机内容，用于空主题
-            if(typeof(pure_words_content)=='undefined'){ //处理全新作品
+            // if(typeof(pure_words_content)=='undefined'){ //处理全新作品
                 var array_str_temp=[];
-                random_text_array(array_str_temp,12); //获取随机的模板文字
+                random_text_array(array_str_temp,15); //获取随机的模板文字
                 // array_str_temp.push('你现在看到的只是案例，文字是可以自定义哒，6000字以下');
                 pure_words_content=array_str_temp.join('\r\r');
-            }
+            // }
             $(".div_pure_words_height").html(pure_words_content+'22222');  //初始化复制内容，撑开文档高度            
             
             // 初始化设置div的bg图片 初始化设置div的bg图片
@@ -349,17 +348,12 @@
         function random_text_array(temp_array,length){  //获取随机的模板文字
             console.log('random_text_array');
             var random_array=[];
-            while(random_array.length<length){
-                // var random_num=Math.floor(Math.random()*(array_as_pics.length-0))+0;
-                var random_num=Math.floor(Math.random()*(array_as_words_love.length)); //随机取值 
-                if(random_array.indexOf(random_num)==-1){
-                    random_array.push(random_num);
-                }
-            }
             // console.log(random_array);
-            for(var i=0; i<length; i++){  
-                temp_array.push(array_as_words_love[random_array[i]]); //获取随机的模板文字
+            for(var i=0; i<15; i++){  
+                temp_array.push(array_as_words_love[i]); //获取随机的模板文字
             }
+            console.log(temp_array);
+            
         }         
         
     </script>
@@ -383,7 +377,7 @@
     
 
     <script> 
-        var start_content={"hearttree_text":"\u8c22\u547d\u8fd0\uff0c\u8ba9\u4f60\u6211\u76f8\u9047\r\n\u4e8e\u5343\u4e07\u4eba\u4e4b\u4e2d\uff0c\u5728\u65f6\u5149\u7684\u8352\u91ce\u91cc\r\n\u4e0d\u65e9\u4e5f\u4e0d\u665a\uff0c\u521a\u521a\u597d\r\n\u4e16\u95f4\u7eb5\u6709\u4e07\u822c\u597d\uff0c\u800c\u6211\u53ea\u949f\u60c5\u4e8e\u4f60\r\n\u4e14\u4ee5\u767d\u5934\u5171\u4f59\u751f\uff0c\u4ece\u6b64\u60c5\u6df1\u5230\u6c38\u6052","hearttree_desc":"","hearttree_time":"","hearttree_time_type":"hearttree_postive","bg_img":"","img_src":""}; //可能为null
+        var start_content={"hearttree_text":"\u8c22\u547d\u8fd0\uff0c\u8ba9\u4f60\u6211\u76f8\u9047\r\n\u4e8e\u5343\u4e07\u4eba\u4e4b\u4e2d\uff0c\u5728\u65f6\u5149\u7684\u8352\u91ce\u91cc\r\n\u4e0d\u65e9\u4e5f\u4e0d\u665a\uff0c\u521a\u521a\u597d\r\n","hearttree_desc":"","hearttree_time":"","hearttree_time_type":"hearttree_postive","bg_img":"","img_src":""}; //可能为null
         console.log(start_content); 
 
         var start_id;
